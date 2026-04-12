@@ -40,12 +40,13 @@ os.environ['BACKEND_TYPE'] = 'TORCH'
 class BaseModel:
 
     def __init__(self, **kwargs):
+        model_id = "Qwen/Qwen2.5-0.5B-Instruct"
         self.model = AutoModelForCausalLM.from_pretrained(
-            "Qwen/Qwen2.5-0.5B-Instruct",
+            model_id,
             torch_dtype="auto",
             device_map="auto"
         )
-        self.tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen2.5-0.5B-Instruct")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
     def preprocess(self, data=None, **kwargs):
         print("BaseModel doesn't need to preprocess")
