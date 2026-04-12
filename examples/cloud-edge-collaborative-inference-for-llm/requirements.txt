@@ -5,4 +5,4 @@ datamodel-code-generator
 kaggle
 groq
 retry
-torch
+torch>=2.0.0
